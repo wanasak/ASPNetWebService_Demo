@@ -79,6 +79,12 @@
   <ItemGroup>
     <Content Include="Readme.txt" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="Connected Services\CalculatorService\CalculatorWebApplication.CalculatorService.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CalculatorService\CalculatorWebApplication.CalculatorService.GetCalculationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CalculatorService\CalculatorWebService.disco" />
     <None Include="Connected Services\CalculatorService\configuration91.svcinfo" />
     <None Include="Connected Services\CalculatorService\configuration.svcinfo" />

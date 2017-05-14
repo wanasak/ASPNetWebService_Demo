@@ -17,10 +17,33 @@ namespace ASPNetWebService
     public class CalculatorWebService : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public int Add(int i, int j)
+        [WebMethod(EnableSession = true)]
+        public int Add(int firstNumber, int secondNumber)
         {
-            return i + j;
+            List<string> calculations;
+
+            if (Session["CALCULATIONS"] == null)
+                calculations = new List<string>();
+            else
+                calculations = (List<String>)Session["CALCULATIONS"];
+
+            string strTransaction = firstNumber.ToString() + " + " + secondNumber.ToString() + " = " + (firstNumber + secondNumber).ToString();
+            calculations.Add(strTransaction);
+            Session["CALCULATIONS"] = calculations;
+
+            return firstNumber + secondNumber;
+        }
+
+        [WebMethod(EnableSession = true)]
+        public List<string> GetCalculations()
+        {
+            if (Session["CALCULATIONS"] == null)
+            {
+                List<string> calculations = new List<string>();
+                calculations.Add("You have not performed any calculations");
+                return calculations;
+            }
+            return (List<string>)Session["CALCULATIONS"];
         }
     }
 }
