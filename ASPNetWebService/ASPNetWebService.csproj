@@ -74,9 +74,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalculatorWebService.asmx" />
+    <Content Include="Readme.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorWebService.asmx.cs">
+      <DependentUpon>CalculatorWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
