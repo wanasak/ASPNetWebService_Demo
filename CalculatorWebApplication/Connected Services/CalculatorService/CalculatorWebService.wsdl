@@ -48,10 +48,12 @@
   </wsdl:message>
   <wsdl:portType name="CalculatorWebServiceSoap">
     <wsdl:operation name="Add">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds 2 numbers and return their sum</wsdl:documentation>
       <wsdl:input message="tns:AddSoapIn" />
       <wsdl:output message="tns:AddSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCalculations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all the recent transactions</wsdl:documentation>
       <wsdl:input message="tns:GetCalculationsSoapIn" />
       <wsdl:output message="tns:GetCalculationsSoapOut" />
     </wsdl:operation>

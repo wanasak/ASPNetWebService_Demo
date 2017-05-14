@@ -17,7 +17,7 @@ namespace ASPNetWebService
     public class CalculatorWebService : System.Web.Services.WebService
     {
 
-        [WebMethod(EnableSession = true)]
+        [WebMethod(EnableSession = true, Description = "Adds 2 numbers and return their sum", CacheDuration = 10)]
         public int Add(int firstNumber, int secondNumber)
         {
             List<string> calculations;
@@ -34,7 +34,7 @@ namespace ASPNetWebService
             return firstNumber + secondNumber;
         }
 
-        [WebMethod(EnableSession = true)]
+        [WebMethod(EnableSession = true, Description = "Returns all the recent transactions", BufferResponse = true)]
         public List<string> GetCalculations()
         {
             if (Session["CALCULATIONS"] == null)
