@@ -10,7 +10,7 @@ namespace ASPNetWebService
     /// Summary description for CalculatorWebService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [WebServiceBinding(ConformsTo = WsiProfiles.None)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
@@ -32,6 +32,12 @@ namespace ASPNetWebService
             Session["CALCULATIONS"] = calculations;
 
             return firstNumber + secondNumber;
+        }
+
+        [WebMethod(MessageName = "Add3Numbers")]
+        public int Add(int firstNumber, int secondNumber, int thirdNumber)
+        {
+            return firstNumber + secondNumber + thirdNumber;
         }
 
         [WebMethod(EnableSession = true, Description = "Returns all the recent transactions", BufferResponse = true)]
